@@ -1,4 +1,4 @@
-package com.first.quarkus.config
+package com.first.quarkus.app.config
 
 import org.hibernate.boot.model.naming.Identifier
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy

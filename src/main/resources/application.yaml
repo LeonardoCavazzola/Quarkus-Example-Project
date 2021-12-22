@@ -8,6 +8,6 @@ quarkus:
       min-size: 0
       max-size: 5
   hibernate-orm:
-    physical-naming-strategy: com.first.quarkus.config.CamelCaseToUnderscoresNamingStrategy
+    physical-naming-strategy: com.first.quarkus.app.config.CamelCaseToUnderscoresNamingStrategy
     database:
       generation: update
