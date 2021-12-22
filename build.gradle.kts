@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.5.31"
     kotlin("plugin.allopen") version "1.5.31"
+    kotlin("plugin.jpa") version "1.5.31"
     id("io.quarkus")
 }
 
@@ -21,6 +22,8 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy-jsonb")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest-client")
+    implementation("io.quarkus:quarkus-jdbc-mariadb")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache")
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
@@ -37,6 +40,7 @@ java {
 }
 
 allOpen {
+    annotation("javax.persistence.Entity")
     annotation("javax.ws.rs.Path")
     annotation("javax.enterprise.context.ApplicationScoped")
     annotation("io.quarkus.test.junit.QuarkusTest")

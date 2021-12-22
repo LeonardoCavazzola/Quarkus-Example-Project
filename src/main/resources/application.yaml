@@ -1,1 +1,12 @@
-
+quarkus:
+  datasource:
+    db-kind: mariadb
+    username: root
+    password: root
+    jdbc:
+      url: jdbc:mariadb://localhost:3306/bitcoin
+      min-size: 0
+      max-size: 5
+  hibernate-orm:
+    database:
+      generation: update
