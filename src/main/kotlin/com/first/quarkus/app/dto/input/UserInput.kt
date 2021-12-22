@@ -1,6 +1,6 @@
-package com.first.quarkus.input
+package com.first.quarkus.app.dto.input
 
-import com.first.quarkus.model.User
+import com.first.quarkus.domain.entity.User
 
 data class UserInput(
     val name: String,

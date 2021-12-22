@@ -1,6 +1,6 @@
-package com.first.quarkus.response
+package com.first.quarkus.app.dto.response
 
-import com.first.quarkus.model.User
+import com.first.quarkus.domain.entity.User
 
 class UserResponse(
     val id: Long,
