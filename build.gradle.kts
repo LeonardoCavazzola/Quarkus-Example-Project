@@ -19,7 +19,7 @@ dependencies {
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-config-yaml")
     implementation("io.quarkus:quarkus-resteasy")
-    implementation("io.quarkus:quarkus-resteasy-jsonb")
+    implementation("io.quarkus:quarkus-resteasy-jackson")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest-client")
     implementation("io.quarkus:quarkus-jdbc-mariadb")
