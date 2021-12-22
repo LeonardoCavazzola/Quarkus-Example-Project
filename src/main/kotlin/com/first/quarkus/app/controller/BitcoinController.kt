@@ -1,6 +1,6 @@
-package com.first.quarkus.controller
+package com.first.quarkus.app.controller
 
-import com.first.quarkus.model.Bitcoin
+import com.first.quarkus.domain.entity.Bitcoin
 import java.math.BigDecimal
 import java.time.LocalDate
 import javax.ws.rs.GET
