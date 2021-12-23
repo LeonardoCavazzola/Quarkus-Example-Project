@@ -1,6 +1,6 @@
 package com.first.quarkus.domain.repository
 
 import com.first.quarkus.domain.entity.User
-import io.quarkus.hibernate.orm.panache.PanacheRepository
+import org.springframework.data.jpa.repository.JpaRepository
 
-interface UserRepository : PanacheRepository<User>
+interface UserRepository : JpaRepository<User, Long>
