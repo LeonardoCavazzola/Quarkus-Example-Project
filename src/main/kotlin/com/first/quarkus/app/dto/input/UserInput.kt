@@ -14,3 +14,11 @@ fun UserInput.toEntity() =
         email = email,
         password = password,
     )
+
+fun UserInput.toEntity(id: Long) =
+    User(
+        id = id,
+        name = name,
+        email = email,
+        password = password,
+    )

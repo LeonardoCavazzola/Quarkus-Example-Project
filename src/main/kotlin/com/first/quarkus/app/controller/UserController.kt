@@ -6,10 +6,7 @@ import com.first.quarkus.app.dto.response.toResponse
 import com.first.quarkus.domain.service.UserService
 import java.net.URI
 import javax.transaction.Transactional
-import javax.ws.rs.GET
-import javax.ws.rs.POST
-import javax.ws.rs.Path
-import javax.ws.rs.PathParam
+import javax.ws.rs.*
 import javax.ws.rs.core.Response
 
 @Path("/users")
@@ -36,6 +33,15 @@ class UserController(
     fun create(userInput: UserInput): Response =
         userService.create(userInput.toEntity())
             .toResponse()
-            .let { Response.created(URI.create("users/${it.id}")).entity(it).build() }
+            .let { Response.created(createURI(it.id)).entity(it).build() }
 
+    @Transactional
+    @Path("/{id}")
+    @PUT
+    fun update(@PathParam("id") id: Long, userInput: UserInput): Response =
+        userService.update(userInput.toEntity(id))
+            .toResponse()
+            .let { Response.ok(createURI(it.id)).entity(it).build() }
+
+    private fun createURI(id: Long): URI = URI.create("this.${id}")
 }

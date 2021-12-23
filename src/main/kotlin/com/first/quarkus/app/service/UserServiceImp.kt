@@ -10,9 +10,11 @@ class UserServiceImp(
     private val userRepository: UserRepository
 ) : UserService {
 
-    override fun findOneById(id: Long): User? = userRepository.findById(id)
+    override fun findOneById(id: Long): User? = userRepository.getOne(id)
 
-    override fun findAll(): List<User> = userRepository.listAll()
+    override fun findAll(): List<User> = userRepository.findAll()
 
-    override fun create(user: User) = user.also(userRepository::persist)
+    override fun create(user: User): User = userRepository.save(user)
+
+    override fun update(user: User): User = userRepository.save(user)
 }

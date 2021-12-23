@@ -9,4 +9,7 @@ interface UserService {
     fun findAll(): List<User>
 
     fun create(user: User): User
+
+    fun update(user: User): User
+
 }
