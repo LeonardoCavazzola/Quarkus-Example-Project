@@ -10,7 +10,7 @@ class UserServiceImp(
     private val userRepository: UserRepository
 ) : UserService {
 
-    override fun findOneById(id: Long): User? = userRepository.getOne(id)
+    override fun findOneById(id: Long): User? = userRepository.findById(id).orElse(null)
 
     override fun findAll(): List<User> = userRepository.findAll()
 
