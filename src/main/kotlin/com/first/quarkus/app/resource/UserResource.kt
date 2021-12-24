@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response
 @Path("/users")
 class UserResource(
     private val userService: UserService,
-) : Logger{
+) : Logger {
 
     @Path("/{id}")
     @GET
@@ -41,5 +41,5 @@ class UserResource(
             .toResponse()
             .let { Response.ok(createURI(it.id)).entity(it).build() }
 
-    private fun createURI(id: Long): URI = URI.create("this.${id}")
+    private fun createURI(id: Long): URI = URI.create("/users/${id}")
 }
