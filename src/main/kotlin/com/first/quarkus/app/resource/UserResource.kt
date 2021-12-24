@@ -1,18 +1,18 @@
 package com.first.quarkus.app.resource
 
+import com.first.quarkus.app.common.Logger
 import com.first.quarkus.app.dto.input.UserInput
 import com.first.quarkus.app.dto.input.toEntity
 import com.first.quarkus.app.dto.response.toResponse
 import com.first.quarkus.domain.service.UserService
 import java.net.URI
-import javax.transaction.Transactional
 import javax.ws.rs.*
 import javax.ws.rs.core.Response
 
 @Path("/users")
 class UserResource(
-    private val userService: UserService
-) {
+    private val userService: UserService,
+) : Logger{
 
     @Path("/{id}")
     @GET
@@ -28,18 +28,16 @@ class UserResource(
             .map { it.toResponse() }
             .let { Response.ok(it).build() }
 
-    @Transactional
     @POST
-    fun create(userInput: UserInput): Response =
-        userService.create(userInput.toEntity())
+    fun create(input: UserInput): Response =
+        userService.create(input.toEntity())
             .toResponse()
             .let { Response.created(createURI(it.id)).entity(it).build() }
 
-    @Transactional
     @Path("/{id}")
     @PUT
-    fun update(@PathParam("id") id: Long, userInput: UserInput): Response =
-        userService.update(userInput.toEntity(id))
+    fun update(@PathParam("id") id: Long, input: UserInput): Response =
+        userService.update(input.toEntity(id))
             .toResponse()
             .let { Response.ok(createURI(it.id)).entity(it).build() }
 
