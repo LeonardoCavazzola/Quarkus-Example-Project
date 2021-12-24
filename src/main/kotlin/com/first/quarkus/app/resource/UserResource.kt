@@ -1,4 +1,4 @@
-package com.first.quarkus.app.controller
+package com.first.quarkus.app.resource
 
 import com.first.quarkus.app.dto.input.UserInput
 import com.first.quarkus.app.dto.input.toEntity
@@ -10,7 +10,7 @@ import javax.ws.rs.*
 import javax.ws.rs.core.Response
 
 @Path("/users")
-class UserController(
+class UserResource(
     private val userService: UserService
 ) {
 
