@@ -25,6 +25,7 @@ dependencies {
     implementation("io.quarkus:quarkus-jdbc-mariadb")
     implementation("io.quarkus:quarkus-spring-data-jpa")
 
+    implementation("org.apache.logging.log4j:log4j-api")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     testImplementation("io.quarkus:quarkus-junit5")
