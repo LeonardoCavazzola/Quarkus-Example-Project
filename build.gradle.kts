@@ -23,7 +23,7 @@ dependencies {
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest-client")
     implementation("io.quarkus:quarkus-jdbc-mariadb")
-    implementation("io.quarkus:quarkus-spring-data-jpa")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin")
 
     implementation("org.apache.logging.log4j:log4j-api")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
