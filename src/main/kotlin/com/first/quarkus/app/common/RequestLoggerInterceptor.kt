@@ -1,6 +1,5 @@
-package com.first.quarkus.app.config
+package com.first.quarkus.app.common
 
-import com.first.quarkus.app.common.Logger
 import java.time.Duration
 import java.time.LocalDateTime
 import javax.ws.rs.container.ContainerRequestContext
